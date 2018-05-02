@@ -1,0 +1,30 @@
+<div class="row">
+  <h3>Listagem de posts</h3>
+  <app-button color="primary" routerLink="/post/create">
+    <app-glyph icon="plus"></app-glyph>
+    Criar
+  </app-button>
+
+
+  <table class ="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <body>
+  <tr *ngFor="let post of posts">
+    <td>{{post.id}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.body}}</td>
+    <td>
+      <a [routerLink]="['/post', post.id,'edit']">Edit</a>
+    </td>
+  </tr>
+
+  </body>
+  </table>
+</div>
